@@ -335,8 +335,8 @@ def getPaste(uid):
               '{"code":200,"currentTemplate":"PasteShow","currentData":{"paste":{"data":"')
     res = rma(res, f'","id":"{uid}","user":')
     content = res
-    log('INFO', f"End getting paste {
-        uid}, content is save in '{savePaste(content)}'")
+    log('INFO',
+        f"End getting paste {uid}, content is save in '{savePaste(content)}'")
     return content
 
 
@@ -344,8 +344,8 @@ def getMessages(uid):
     log('INFO', f"Getting messages with {uid}")
     url = f"https://www.luogu.com.cn/api/chat/record?user={uid}"
     with requests.get(url, headers=getHeaders(), stream=True) as res:
-        log('INFO', f"End getting messages with {
-            uid}, code is {res.status_code}")
+        log('INFO',
+            f"End getting messages with {uid}, code is {res.status_code}")
         return json.loads(res.text)
 
 
@@ -365,8 +365,8 @@ def getProblem(id):
     res = rmb(res, '<article>')
     res = rma(res, '</article>')
     content = res
-    log('INFO', f"End getting problem {
-        id}, problem is save in '{saveProblem(content)}'")
+    log('INFO',
+        f"End getting problem {id}, problem is save in '{saveProblem(content)}'")
     return content
 
 
@@ -443,8 +443,8 @@ def report(uid):
         ms = data.choices[0].delta.content
         temp += ms
         if temp.__len__() > 250:
-            log('INFO', f"Cut {uid}'s message, it is save in {
-                saveReport(temp)}")
+            log('INFO',
+                f"Cut {uid}'s message, it is save in {saveReport(temp)}")
             tell(uid, temp)
             temp = ''
     if temp.__len__() != 0:
