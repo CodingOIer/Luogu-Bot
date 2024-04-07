@@ -448,6 +448,8 @@ def report(uid):
             tell(uid, temp)
             temp = ''
     if temp.__len__() != 0:
+        log('INFO',
+            f"Cut {uid}'s message, it is save in {saveReport(temp)}")
         tell(uid, temp)
     answering.erase(uid)
     log('INFO', f"End report user {uid}")
