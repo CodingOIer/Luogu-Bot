@@ -6,4 +6,4 @@
 以 : 或者 ~ 开头的句子不会被系统识别
 目前发送链接仅支持使用洛谷云剪切板和洛谷题库，请用 「」 将链接包裹
 
-https://github.com/CodingOIer/Luogu-Bot 版本信息：v2.0
+https://github.com/CodingOIer/Luogu-Bot 版本信息：v2.1
