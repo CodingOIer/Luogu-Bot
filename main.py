@@ -544,12 +544,12 @@ def background():
     global saving
     while True:
         saving.save('./saving.data')
-        threading.Thread(target=updateWite).start()
-        threading.Thread(target=updateBlack).start()
-        threading.Thread(target=updateTips).start()
-        threading.Thread(target=updateHelp).start()
-        checkMessage()
-        time.sleep(1)
+        updateWite()
+        updateBlack()
+        updateTips()
+        updateHelp()
+        readJson()
+        time.sleep(60)
 
 
 if __name__ == '__main__':
@@ -559,5 +559,5 @@ if __name__ == '__main__':
     threading.Thread(target=backgroundSend).start()
     threading.Thread(target=backgroundReport).start()
     while True:
-        readJson()
-        time.sleep(60)
+        checkMessage()
+        time.sleep(3)
