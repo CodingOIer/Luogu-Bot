@@ -323,7 +323,7 @@ def getPaste(uid):
         log('ERR', f"Wrong uid {uid}")
         return 'ERR'
     log('INFO', f"Getting paste {uid}")
-    url = f"https://www.luogu.com.cn/paste/{uid}"
+    url = f"https://www.luogu.com/paste/{uid}"
     res = requests.get(url, headers=getHeaders(), stream=True)
     res = res.text
     res = rmb(res, 'JSON.parse(decodeURIComponent("')
